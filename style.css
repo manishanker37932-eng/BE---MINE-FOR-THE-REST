@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffebee;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.container { text-align: center; }
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.yes {
+    background-color: #ff4081; /* Attractive pink */
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+}
+
+.no {
+    background-color: #555; /* Ugly gray */
+    color: #ccc;
+    position: absolute; /* Needed for the "no" button to move */
+}
