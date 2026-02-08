@@ -1,33 +1,36 @@
 body {
+    margin: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #ffebee;
-    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle, #fff0f3 0%, #ffc1cc 100%);
+    font-family: 'Dancing Script', cursive, Arial;
     overflow: hidden;
 }
 
-.container { text-align: center; }
-
-.btn {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
-    margin: 10px;
-    transition: 0.3s;
+#heartCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none; /* Let clicks pass through */
+    z-index: 999;
 }
 
-.yes {
-    background-color: #ff4081; /* Attractive pink */
-    color: white;
-    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+.main-title { color: #d81b60; font-size: 2.5rem; text-shadow: 2px 2px #fff; }
+
+.btn { padding: 15px 35px; font-size: 1.3rem; border-radius: 50px; cursor: pointer; border: none; transition: 0.3s; }
+.yes { background: #ff4081; color: white; box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4); }
+.no { background: #9e9e9e; color: #fff; position: absolute; }
+
+/* The Romantic Dialogue Box */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(216, 27, 96, 0.2); backdrop-filter: blur(8px); }
+.modal-content {
+    background: white; margin: 15% auto; padding: 40px; border-radius: 30px; width: 320px;
+    text-align: center; border: 4px solid #ff4081; animation: heartBeat 0.8s ease-out;
 }
 
-.no {
-    background-color: #555; /* Ugly gray */
-    color: #ccc;
-    position: absolute; /* Needed for the "no" button to move */
+@keyframes heartBeat {
+    0% { transform: scale(0.5); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
